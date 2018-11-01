@@ -1,30 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8">
-	<title>Sacform</title>
-	<link rel="stylesheet" href="css/styles.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Sacform</title>
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
+
 <body>
-	//= include/header.html
-	<div class="first-screen">
-		<div style="display: none" class="first-screen_text en-text">
-			<h1>Sacform is Manufacturer Company of coil processing line and press feeding lines</h1>
-			<h2>The site is under construction, for more information please visit our old <a href="http://www.sacform.com/en/">website</a></h2>
-		</div>
-		<div class="first-screen_text pl-text">
-			<h1>Sacform jest Producentem linii do wiercenia cewek i podajników do pras</h1>
-			<h2>Strona jest w budowie, aby uzyskać więcej informacji, odwiedź naszą starą <a href="http://www.sacform.com/en/">stronę internetową</a></h2>
-		</div>	
-	</div>
-	//= include/footer.html
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-	crossorigin="anonymous">
-	</script>
-	<script src="../js/main.min.js"></script>
+    //= include/header.html
+    <div class="main_site">
+        <div id="fullpage">
+            <div class="section">
+                <div class="first-section">
+                    <div class="section_img bg1">
+                        <img src="../img/bg1.png" alt="">
+                    </div>
+                    <div class="section_text section_text-left">
+                        <div style="display: none" class="en-text">
+                            <h1 class="big_text">Sacform is Manufacturer Company of coil processing line and press feeding lines</h1>
+                            <h2 class="mid_text">Manufactures automatic production lines such as coil processing lines, punching and perforating lines, roll forming lines which are controlled with Programmable Controllers, PLC</h2>
+                        </div>
+                        <div class="pl-text">
+                            <h1 class="big_text">Sacform is Manufacturer Company of coil processing line and press feeding lines</h1>
+                            <h2 class="mid_text">Manufactures automatic production lines such as coil processing lines, punching and perforating lines, roll forming lines which are controlled with Programmable Controllers, PLC</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="second-section">
+                    <div class="section_img bg2">
+                        <img src="../img/bg2.png" alt="">
+                    </div>
+                    <div class="section_text section_text-right">
+                        <div style="display: none" class="en-text">
+                            <h1 class="big_text">Sacform designs and applies unique technologies in the coil processing market</h1>
+                            <h2 class="mid_text">Company target is to be market leader with our technological innovations, high quality flexible fast and handy machines and most importantly our experience to give complete service for customer’s operations under our brand
+                                AGMLine
+                            </h2>
+                        </div>
+                        <div class="pl-text">
+                            <h1 class="big_text">Sacform designs and applies unique technologies in the coil processing market</h1>
+                            <h2 class="mid_text">Company target is to be market leader with our technological innovations, high quality flexible fast and handy machines and most importantly our experience to give complete service for customer’s operations under our brand
+                                AGMLine
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="third-section">
+                    <div class="section_img bg3">
+                        <img src="../img/bg3.png" alt="">
+                    </div>
+                    <div class="section_img bg4">
+                        <img src="../img/bg3.png" alt="">
+                    </div>
+                    <div class="section_text section_text-center">
+                        <div style="display: none" class="en-text">
+                            <h1 class="big_text">SACFORM serves you to manufacture products faster and more precise
+                            </h1>
+                            <h2 class="mid_text">In addition to the significant increase in your production capacity, advanced technology automatized line enables you to employ less operation personnel with safer work and low waste
+                            </h2>
+                        </div>
+                        <div class="pl-text">
+                            <h1 class="big_text">SACFORM serves you to manufacture products faster and more precise
+                            </h1>
+                            <h2 class="mid_text">In addition to the significant increase in your production capacity, advanced technology automatized line enables you to employ less operation personnel with safer work and low waste
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    //= include/footer.html
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script>
+    <script src="../js/main.min.js"></script>
+    <script src="../js/fullpage.min.js"></script>
+    <script>
+        var myFullpage = new fullpage('#fullpage', {
+            lazyLoad: true
+        });
+    </script>
 </body>
+
 </html>

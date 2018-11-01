@@ -1,0 +1,149 @@
+.header
+	z-index: 9999;
+	width: 100%;
+	position: fixed;
+	box-sizing: border-box;
+	display flex
+	justify-content space-between
+	align-items center
+	
+	@media xlarge
+		padding: 6.5vh 7.7vw 0;
+		height: 11vh;
+	@media large
+		padding: 6vh 7vw 0;
+		height: 11vh;
+	@media medium
+		padding: 9.7vh 6.7vw 0;
+		height: 8vh;
+	@media small
+		padding 3vh 13vw 0
+		height: 7vh;		
+.logo
+	background: url(../img/logo.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	@media xlarge
+		width 10.6vw
+		height 3.5vh
+	@media large
+		width 12.6vw
+		height 4.1vh	
+	@media medium
+		width 15.6vw
+		height 5.1vh
+	@media small
+		width 30.6vw
+		height 5.1vh	
+.soc-lang
+	display flex
+	align-items center
+	font-family: Colus;
+	
+	ul 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+		@media xlarge
+			width 26px
+		@media large
+			width 21px
+		@media medium
+			width 21px
+		@media small
+			width 15px
+			
+	.language,.social
+		cursor: pointer;
+		@media xlarge
+			width 26px
+			height 26px
+		@media large
+			width 21px
+			height 21px
+		@media medium
+			width 21px
+			height 21px
+		@media small
+			width 15px
+			height 15px
+			
+	.language
+		//background: url(../img/lang.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: inline-block;
+		position relative
+		img
+			fill: #8080ff
+		@media xlarge
+			margin-right 43px
+		@media large
+			margin-right 36px
+		@media medium
+			margin-right 29px
+		@media small
+			margin-right 22px
+			
+	.social
+		background: url(../img/social.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: inline-block;
+		position relative
+		
+.lang-list
+	color #fff
+	position absolute
+	li
+		padding-top 10px
+		
+	@media xlarge
+		font-size 18px
+		top 35px
+	@media large
+		font-size 16px
+		top 35px
+	@media medium
+		font-size 14px
+		top 25px
+	@media small
+		font-size 10px
+		top 15px
+		
+.social-list
+	position absolute
+	li
+		padding-top 11px
+		
+	@media xlarge
+		top 35px
+	@media large
+		top 35px
+	@media medium
+		top 25px
+	@media small
+		top 15px
+	li
+		img
+			max-width 100%
+			max-height auto
+		@media xlarge
+			width 18px
+			height 18px
+		@media large
+			width 16px
+			height 16px
+		@media medium
+			width 14px
+			height 14px
+		@media small
+			width 10px
+			height 10px
+
+
+
+
