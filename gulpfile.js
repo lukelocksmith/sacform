@@ -27,7 +27,7 @@ var path = {
     },
     src: { //Пути откуда брать исходники
         html: 'src/template/*.html', //Синтаксис src/template/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js: 'src/js/[^_]*.js',//В стилях и скриптах нам понадобятся только main файлы
+        js: 'src/js/[^_]*.js', //В стилях и скриптах нам понадобятся только main файлы
         jshint: 'src/js/*.js',
         css: 'src/css/styles.styl',
         cssVendor: 'src/css/vendor/*.*', //Если мы хотим файлы библиотек отдельно хранить то раскоментить строчку
@@ -50,7 +50,7 @@ var path = {
 };
 
 // Локальный сервер для разработки
-gulp.task('connect', function(){
+gulp.task('connect', function() {
     connect.server({ //настриваем конфиги сервера
         root: [path.outputDir], //корневая директория запуска сервера
         port: 9999, //какой порт будем использовать
@@ -59,7 +59,7 @@ gulp.task('connect', function(){
 });
 
 // таск для билдинга html
-gulp.task('html:build', function () {
+gulp.task('html:build', function() {
     gulp.src(path.src.html) //Выберем файлы по нужному пути
         .pipe(rigger()) //Прогоним через rigger
         .pipe(gulp.dest(path.build.html)) //выгрузим их в папку build
@@ -74,23 +74,23 @@ gulp.task('jshint:build', function() {
 });
 
 // билдинг яваскрипта
-gulp.task('js:build', function () {
+gulp.task('js:build', function() {
     gulp.src(path.src.js) //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
         .pipe(sourcemaps.init()) //Инициализируем sourcemap
         .pipe(uglify()) //Сожмем наш js
         .pipe(sourcemaps.write()) //Пропишем карты
-        .pipe(rename({suffix: '.min'})) //добавим суффикс .min к выходному файлу
+        .pipe(rename({ suffix: '.min' })) //добавим суффикс .min к выходному файлу
         .pipe(gulp.dest(path.build.js)) //выгрузим готовый файл в build
         .pipe(connect.reload()) //И перезагрузим сервер
 });
 
 // билдим статичные изображения
-gulp.task('image:build', function () {
+gulp.task('image:build', function() {
     gulp.src(path.src.img) //Выберем наши картинки
         .pipe(imagemin({ //Сожмем их
             progressive: true, //сжатие .jpg
-            svgoPlugins: [{removeViewBox: false}], //сжатие .svg
+            svgoPlugins: [{ removeViewBox: false }], //сжатие .svg
             interlaced: true, //сжатие .gif
             optimizationLevel: 3 //степень сжатия от 0 до 7
         }))
@@ -103,7 +103,7 @@ gulp.task('imagescontent:build', function() {
     gulp.src(path.src.contentImg)
         .pipe(imagemin({ //Сожмем их
             progressive: true, //сжатие .jpg
-            svgoPlugins: [{removeViewBox: false}], //сжатие .svg
+            svgoPlugins: [{ removeViewBox: false }], //сжатие .svg
             interlaced: true, //сжатие .gif
             optimizationLevel: 3 //степень сжатия от 0 до 7
         }))
@@ -112,7 +112,7 @@ gulp.task('imagescontent:build', function() {
 });
 
 // билдинг пользовательского css
-gulp.task('cssOwn:build', function () {
+gulp.task('cssOwn:build', function() {
     gulp.src(path.src.css) //Выберем наш основной файл стилей
         .pipe(sourcemaps.init()) //инициализируем soucemap
         .pipe(stylus({
@@ -124,13 +124,13 @@ gulp.task('cssOwn:build', function () {
         })) //Добавим вендорные префиксы
         .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write()) //пропишем sourcemap
-        .pipe(rename({suffix: '.min'})) //добавим суффикс .min к имени выходного файла
+        .pipe(rename({ suffix: '.min' })) //добавим суффикс .min к имени выходного файла
         .pipe(gulp.dest(path.build.css)) //вызгрузим в build
         .pipe(connect.reload()) //перезагрузим сервер
 });
 
 // билдинг вендорного css
-gulp.task('cssVendor:build', function () {
+gulp.task('cssVendor:build', function() {
     gulp.src(path.src.cssVendor) // Берем папку vendor
         .pipe(sourcemaps.init()) //инициализируем soucemap
         .pipe(cssmin()) //Сожмем
@@ -165,44 +165,48 @@ gulp.task('build', [
     'css:build',
     'fonts:build',
     'htaccess:build',
+]);
+
+// билдим все
+gulp.task('buildImg', [
     'image:build',
     'imagescontent:build'
 ]);
 
 // чистим папку билда
-gulp.task('clean', function (cb) {
+gulp.task('clean', function(cb) {
     rimraf(path.clean, cb);
 });
 
 // watch
-gulp.task('watch', function(){
-     //билдим html в случае изменения
+gulp.task('watch', function() {
+    //билдим html в случае изменения
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
     });
-     //билдим контекстные изрображения в случае изменения
+    //билдим контекстные изрображения в случае изменения
     watch([path.watch.contentImg], function(event, cb) {
         gulp.start('imagescontent:build');
     });
-     //билдим css в случае изменения
+    //билдим css в случае изменения
     watch([path.watch.css], function(event, cb) {
         gulp.start('css:build');
     });
-     //проверяем js в случае изменения
+    //проверяем js в случае изменения
     watch([path.watch.js], ['jshint']);
-     //билдим js в случае изменения
+    //билдим js в случае изменения
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
-     //билдим статичные изображения в случае изменения
+    //билдим статичные изображения в случае изменения
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
-     //билдим шрифты в случае изменения
+    //билдим шрифты в случае изменения
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
     });
-     //билдим htaccess в случае изменения
+    //билдим htaccess в случае изменения
     watch([path.watch.htaccess], function(event, cb) {
         gulp.start('htaccess:build');
     });
