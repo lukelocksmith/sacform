@@ -88,12 +88,12 @@ gulp.task('js:build', function() {
 // билдим статичные изображения
 gulp.task('image:build', function() {
     gulp.src(path.src.img) //Выберем наши картинки
-        .pipe(imagemin({ //Сожмем их
-            progressive: true, //сжатие .jpg
-            svgoPlugins: [{ removeViewBox: false }], //сжатие .svg
-            interlaced: true, //сжатие .gif
-            optimizationLevel: 3 //степень сжатия от 0 до 7
-        }))
+        // .pipe(imagemin({ //Сожмем их
+        //     progressive: true, //сжатие .jpg
+        //     svgoPlugins: [{ removeViewBox: false }], //сжатие .svg
+        //     interlaced: true, //сжатие .gif
+        //     optimizationLevel: 0 //степень сжатия от 0 до 7
+        // }))
         .pipe(gulp.dest(path.build.img)) //выгрузим в build
         .pipe(connect.reload()) //перезагрузим сервер
 });
@@ -101,15 +101,16 @@ gulp.task('image:build', function() {
 // билдим динамичные изображения
 gulp.task('imagescontent:build', function() {
     gulp.src(path.src.contentImg)
-        .pipe(imagemin({ //Сожмем их
-            progressive: true, //сжатие .jpg
-            svgoPlugins: [{ removeViewBox: false }], //сжатие .svg
-            interlaced: true, //сжатие .gif
-            optimizationLevel: 3 //степень сжатия от 0 до 7
-        }))
+        // .pipe(imagemin({ //Сожмем их
+        //     progressive: true, //сжатие .jpg
+        //     svgoPlugins: [{ removeViewBox: false }], //сжатие .svg
+        //     interlaced: true, //сжатие .gif
+        //     optimizationLevel: 3 //степень сжатия от 0 до 7
+        // }))
         .pipe(gulp.dest(path.build.contentImg)) //выгрузим в build
         .pipe(connect.reload()) //перезагрузим сервер
 });
+
 
 // билдинг пользовательского css
 gulp.task('cssOwn:build', function() {

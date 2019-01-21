@@ -1,6 +1,24 @@
-sacform main presentasion screen
- ☐ language button with change pl and en -> change content when click some one language
- ☐ social icon add fb and another social media
- ☐ create responsive to all devices
- ☐ learn ftp client on sb3 and send website to hosting
- ☐ create github repositories and push scform to git repo
+☐ MENU -> HOME, MEDIA, CONTACT poprawit class i ssylki
+☐ nazymajesz ssylku w media contact i mieniajatsia cwet menu
+☐ animacja uwiliczenija teksta na menu
+☐ ssylku na logo
+✔ dodac nowa zasade dla menu z warunkiem jezeli tlow jest ciemne przed otworzeniem menu @done (12/28/2018, 6:52:32 PM)
+
+main:
+	✔ cwet menu bgc none; @done (12/28/2018, 6:52:07 PM)
+	☐ perehod mezdu slajdami
+	☐ scroll strelaka poworachiwaetsia kogda dojezajet na werh
+
+products:
+	☐ ssylki na raznyje stranicy dat nadpisi
+	☐ slider watch how, pomieniat strelki
+	☐ dat ssylki na strelki w niuz ekrana
+
+media:
+	✔ dat nadpis media w nachale @done (12/28/2018, 4:30:25 PM)
+	✔ scrolit scrollom koliosikom @done (12/28/2018, 4:30:23 PM)
+	✔ zakruglit ekrany @done (12/28/2018, 2:20:59 PM)
+
+all:
+	☐ smena jazyka na PL
+	☐ contakty w menu?

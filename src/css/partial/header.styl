@@ -1,83 +1,54 @@
+
+
 .header
 	z-index: 9999;
 	box-sizing: border-box;
 	width: 100%
-	@media xlarge
-		padding-left: 7.7vw;
-		padding-right: 7.7vw;
-
-	@media large
-		padding-left: 7vw;
-		padding-right: 7vw;
-
-	@media medium
-		padding-left: 6.7vw;
-		padding-right: 6.7vw;
-
-	@media small
-		padding-left: 13vw;
-		padding-right: 13vw;
 
 
+/*HEADER UP*/
 .header-up
 	display flex
 	justify-content space-between
 	align-items center
-	position absolute
-	top 0
-	@media xlarge
-		padding-top: 6.5vh;
-	@media large
-		padding-top: 6vh;
-	@media medium
-		padding-top: 9.7vh;
-	@media small
-		padding-top 3vh
+	position fixed
+	background:  #F4F4F4;
+	padding-bottom: 10px;
 
 .header-up_left
 	display flex
 	justify-content space-between
 	align-items center
 
-.header-down
-	display flex
-	justify-content space-between
-	position absolute
-	bottom 0
-	@media xlarge
-		padding-bottom: 6.5vh
-	@media large
-		padding-bottom: 6vh
-	@media medium
-		padding-bottom: 9.7vh
-	@media small
-		padding-bottom: 3vh
-
 .logo 
 	svg
 		width: 100%
 		height: 100%
 		fill: #183762
-	@media xlarge
+	@media xl
 		width 2.6vw
-		height 3.5vh
-	@media large
+		height auto
+	@media lg
 		width 2vw
-		height 4.1vh	
-	@media medium
-		width 7.6vw
-		height 5.1vh
-	@media small
-		width 15.6vw
-		height 5.1vh
+		height auto
+	@media md
+		width 5vw
+		height auto
+	@media sm
+		width 7.2vw
+		height auto
 .nav
-	@media xlarge
+	@media xl
 		margin-left 4.6vw
-	@media large
+	@media lg
 		margin-left 4vw
+	@media sm
+		display none
 
 .nav-item
 	margin-right 3.6vw
+
+.nav-item, .nav-item a
 	display: inline;
 	font-family: "SegoeUIRegular";
 	font-style: normal;
@@ -86,9 +57,12 @@
 	font-size: 0.85vw;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
-	a
-		text-decoration: none;
-		color: #0D0D0D;
+	cursor: pointer
+	text-decoration: none;
+
+.nav-item span:hover
+	color #0D2241
+	opacity .3
 
 .soc-lang
 	display flex
@@ -100,66 +74,78 @@
 		flex-direction: column;
 		align-items: center;
 		
-		@media xlarge
+		@media xl
 			width 26px
-		@media large
+		@media lg
 			width 21px
-		@media medium
+		@media md
 			width 21px
-		@media small
+		@media sm
 			width 15px
 			
 	.language,.social
 		cursor: pointer;
-		@media xlarge
-			width 26px
-			height 26px
-		@media large
-			width 21px
-			height 21px
-		@media medium
-			width 21px
-			height 21px
-		@media small
-			width 15px
-			height 15px
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media xl
+			width 53px
+			height 53px
+		@media lg
+			width 3.5vw
+			height 3.5vw
+		@media md
+			width 5vw
+			height 5vw
+		@media sm
+			width 7.2vw
+			height 7.2vw
 			
 	.language
-		svg
-			width: 100%
-			height: 100%
-			fill: #183762
-		@media xlarge
-			margin-right 43px
-		@media large
-			margin-right 36px
-		@media medium
-			margin-right 29px
-		@media small
-			margin-right 22px
+		font-family: "SegoeUISemiBold";
+		line-height: normal;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #FFFFFF;
+			// width: 40%
+			// height: 40%
+			// fill: #fff
+			// border: 0.2px solid #FFFFFF;
+			// border-radius: 50%
+		// @media xl
+		// 	margin-right 43px
+		// @media lg
+		// 	margin-right 36px
+		// @media md
+		// 	margin-right 29px
+		// @media sm
+		// 	margin-right: 0px;
 			
 	.social
 		svg
 			width: 100%
 			height: 100%
 			fill: #183762
-		
+		@media sm
+			display none
+
 .lang-list
 	color #fff
 	position absolute
 	li
 		padding-top 10px
 		
-	@media xlarge
+	@media xl
 		font-size 18px
 		top 35px
-	@media large
+	@media lg
 		font-size 16px
 		top 35px
-	@media medium
+	@media md
 		font-size 14px
 		top 25px
-	@media small
+	@media sm
 		font-size 10px
 		top 15px
 		
@@ -168,40 +154,93 @@
 	li
 		padding-top 11px
 		
-	@media xlarge
+	@media xl
 		top 35px
-	@media large
+	@media lg
 		top 35px
-	@media medium
+	@media md
 		top 25px
-	@media small
+	@media sm
 		top 15px
 	li
 		img
 			max-width 100%
 			max-height auto
-		@media xlarge
+		@media xl
 			width 18px
 			height 18px
-		@media large
+		@media lg
 			width 16px
 			height 16px
-		@media medium
+		@media md
 			width 14px
 			height 14px
-		@media small
+		@media sm
 			width 10px
 			height 10px
 
+/*HEADER DOWN*/
+.header-down
+	display flex
+	justify-content space-between
+	position fixed
+	bottom 0
+	z-index 9998
+	@media sm
+		display: none;
+
+.scroll-arrow
+	display flex
+	flex-direction: column
+
+.scroll-arrow_text
+	width 38px
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+
+	font-family: "SegoeUIBold";
+	line-height: normal;
+	font-size: 16px;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	writing-mode: vertical-lr
+	text-align: center;
+
+
+.scroll-arrow_img
+	width 38px
+	height 38px
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	svg
+		fill: #fff
+
+.scroll_text
+	color: #183762;
+
+.close_text
+	color: #fff;
+
+.header-up_tm
+	font-family: "SegoeUIRegular";
+	line-height: normal;
+	font-size: 1.9vw;
+	text-align: center;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: #BEBEBE;
+	@media sm
+		display block !important
+
 .tm
 	align-self: flex-end
-	font-family: "SegoeUIRegular";
-	font-style: normal;
-	font-weight: 600;
+	font-family: "SegoeUISemiBold";
 	line-height: normal;
-	font-size: 0.74vw;
-	letter-spacing: 0.05em;
+	font-size: 16px;
+	text-align: center;
+	letter-spacing: 0.2em;
 	text-transform: uppercase;
-	color: #0D0D0D;
-
-
+	color: #0D2241;

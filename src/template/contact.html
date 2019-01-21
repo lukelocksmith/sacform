@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Sacform</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/css/swiper.min.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        html {
+            background-color: #183762;
+        }
+        
+        .header-down {
+            display: none !important;
+        }
+        
+        .header-up {
+            background: none;
+        }
+        
+        .nav-item,
+        .nav-item a {
+            color: white;
+        }
+        
+        .logo svg {
+            fill: #fff;
+        }
+        
+        .language {
+            display: block;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(255, 255, 255, .4);
+            animation: pulse 2s infinite;
+            color: #183762 !important;
+        }
+        
+        .contact-info,
+        .contact-info a {
+            color: white;
+        }
+        /* TODO 
+    why activated menu on this site transapred*/
+        
+        .activated-menu {}
+    </style>
+</head>
+
+<body style="overflow-x: hidden">
+    //= include/menu.html
+    <div class="main">
+        //= include/header.html
+        <!-- need -->
+        //= include/footer.html
+    </div>
+    <div class="menu-without-color">
+        <div class="activated-menu media-version">
+            CONTACTS
+            <span>how can we help you?
+            </span>
+        </div>
+        <div class="contact-forms">
+            <div class="name form">
+                <form>
+                    Who are you?:<br>
+                    <input type="text" name="name" value="FIrst and last name"><br>
+                </form>
+            </div>
+            <div class="phone-mail form">
+                <div class="mail">
+                    <form>
+                        Phone:<br>
+                        <input type="text" name="phone" value="+ 999 999 999 999"><br>
+                    </form>
+                </div>
+                <div class="phone">
+                    <form>
+                        Email:<br>
+                        <input type="text" name="email" value="example@mail.com"><br>
+                    </form>
+                </div>
+            </div>
+            <div class="subject form">
+                <form>
+                    Subject:<br>
+                    <input type="text" name="subject" value="Decoiler"><br>
+                </form>
+            </div>
+            <div class="text-message">
+                <form action="">
+                    <input type="text" class="text-message_in" name="message" id="" value="Write your message here">
+                </form>
+            </div>
+            <div class="submit-button">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+        <div class="menu-article">
+            <div class="contact-info">
+                <div class="address-title">Adress</div>
+                <div class="address"><a href="https://www.google.com/maps/place/Sacform+Coil+Processing+Line/@40.9942387,29.1720026,17z/data=!4m8!1m2!2m1!1sDudullu+Organize+Sanayi+B%C3%B6lgesi+3.+Cadde+No:12+%2F+A,+34775+DUDULLU%2F%C3%9Cmraniye%2F%C4%B0stanbul,+Turcja!3m4!1s0x14cacf4104f089f7:0x8261207e7bc51109!8m2!3d40.99471!4d29.172726">Dudullu Organize Sanayi Bölgesi 3. Cadde No: 12/A Dudullu - Ümraniye Istanbul - Turkey</a></div>
+                <div class="phone"><a href="tel:+90 541 368 42 43">+90 541 368 42 43</a></div>
+                <div class="info-mail"><a href="mailto:info@sacform.com">info@sacform.com</a></div>
+                <div class="export-mail"><a href="mailto:export@sacform.com">export@sacform.com</a></div>
+                <div class="tm">© SACFORM 2018</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/js/swiper.min.js"></script>
+    <script src="../js/main.min.js"></script>
+</body>
+
+</html>

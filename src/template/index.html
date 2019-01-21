@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Sacform</title>
+    <style>
+        .nav-item,
+        .nav-item a {
+            color: #0D0D0D;
+        }
+        
+        .header-up {
+            background: none !important;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 
+
 <body>
+    //= include/menu.html
+    <!-- need -->
     //= include/header.html
-    <div class="main_site">
+    <!-- need -->
+    //= include/footer.html
+    <div class="main_site" style="z-index: -1;">
         <div id="fullpage">
             <div class="section">
-                <div class="first-section">
-                    <div class="section_img bg1">
-                        <img src="../img/bg1.png" alt="">
+                <div class="first-section all-section">
+                    <div class="section_img bg1 ">
+                        <div class="bg1-img allbg-img">
+                            <img src="../img/bg1.png" alt="">
+                        </div>
                     </div>
                     <div class="section_text section_text-left">
                         <div style="display: none" class="en-text">
@@ -30,9 +48,11 @@
                 </div>
             </div>
             <div class="section">
-                <div class="second-section">
+                <div class="second-section all-section">
                     <div class="section_img bg2">
-                        <img src="../img/bg2.png" alt="">
+                        <div class="bg2-img allbg-img">
+                            <img src="../img/bg2.png" alt="">
+                        </div>
                     </div>
                     <div class="section_text section_text-right">
                         <div style="display: none" class="en-text">
@@ -51,12 +71,16 @@
                 </div>
             </div>
             <div class="section">
-                <div class="third-section">
+                <div class="third-section all-section">
                     <div class="section_img bg3">
-                        <img src="../img/bg3.png" alt="">
-                    </div>
-                    <div class="section_img bg4">
-                        <img src="../img/bg3.png" alt="">
+                        <div class="bg3-img allbg-img">
+                            <div class="bg3_left">
+                                <img src="../img/bg3.png" alt="">
+                            </div>
+                            <div class="bg3_right">
+                                <img src="../img/bg3.png" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="section_text section_text-center">
                         <div style="display: none" class="en-text">
@@ -76,14 +100,17 @@
             </div>
         </div>
     </div>
-    //= include/footer.html
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
-    </script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script> -->
     <script src="../js/main.min.js"></script>
     <script src="../js/fullpage.min.js"></script>
+    <script src="../js/fullpage.extensions.min.js"></script>
+    <script src="../js/fading.js"></script>
     <script>
         var myFullpage = new fullpage('#fullpage', {
-            lazyLoad: true
+            lazyLoad: true,
+            fadingEffect: true,
+            fadingEffectKey: 'YWx2YXJvdHJpZ28uY29tXzAzN1ptRmthVzVuUldabVpXTjBiNXo='
         });
     </script>
 </body>
